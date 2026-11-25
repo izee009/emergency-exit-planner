@@ -1,0 +1,49 @@
+MINI EMERGENCY EXIT PLANNER
+Interactive mode? (y/n, Enter = n): 
+========== Sensor alarm: True | prior = 0.2 ==========
+1) A* shortest route: 6 steps
+   . . . . . E 
+   . # . . . . 
+   . # . . . . 
+   . # # # # . 
+   S * * * * * 
+   . . # # . E 
+2) Bayes: P(Hall C blocked) = 0.6
+3) MDP:
+   Q(Proceed | Clear)   = 75.0
+   Q(Proceed | Blocked) = -42.0
+   Q(Proceed)           = 4.8
+   Q(Detour)            = 63.0
+   Risk threshold: the agent goes the short way only if P(blocked) < 0.103
+   Decision: Detour
+4) Final route: 9 steps -> exit (0, 5)
+   * * * * * E 
+   * # . . . . 
+   * # . . . . 
+   * # # # # . 
+   S . X X . . 
+   . . # # . E 
+
+========== Sensor alarm: False | prior = 0.2 ==========
+1) A* shortest route: 6 steps
+   . . . . . E 
+   . # . . . . 
+   . # . . . . 
+   . # # # # . 
+   S * * * * * 
+   . . # # . E 
+2) Bayes: P(Hall C blocked) = 0.0286
+3) MDP:
+   Q(Proceed | Clear)   = 75.0
+   Q(Proceed | Blocked) = -42.0
+   Q(Proceed)           = 71.66
+   Q(Detour)            = 63.0
+   Risk threshold: the agent goes the short way only if P(blocked) < 0.103
+   Decision: Proceed
+4) Final route: 6 steps -> exit (5, 5)
+   . . . . . E 
+   . # . . . . 
+   . # . . . . 
+   . # # # # . 
+   S * * * * * 
+   . . # # . E 
